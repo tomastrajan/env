@@ -1,0 +1,5 @@
+[user]
+	email = tomas.trajan@gmail.com
+	name = tomastrajan
+[credential]
+	helper = cache --timeout=43200
