@@ -97,6 +97,12 @@ export LANG=en_US.UTF-8
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Functions
+git_fetch_pull_request() {
+  git fetch origin refs/pull/$1/head:pr/$1
+  git checkout pr/$1
+}
+
 # Environment
 export PATH=$PATH:~/bin
 PROMPT_EOL_MARK=''
@@ -110,6 +116,7 @@ alias ...='cd ..'
 alias g='git'
 alias gs='git status'
 alias glog='git log --graph --abbrev-commit --decorate --format=format:"%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)" --all'
+alias gpr='git_fetch_pull_request'
 alias syncfork='git checkout master --force && git fetch upstream && git merge upstream/master && git push'
 
 # Init
