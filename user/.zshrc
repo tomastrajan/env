@@ -99,7 +99,7 @@ export LANG=en_US.UTF-8
 
 # Functions
 git_fetch_pull_request() {
-  git fetch origin refs/pull/$1/head:pr/$1
+  git fetch origin refs/pull/$1/head:pr/$1 -u
   git checkout pr/$1
 }
 
