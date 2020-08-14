@@ -128,3 +128,37 @@ alias blamemedium='git shortlog -s -n --since="24 weeks"'
 # Init
 cls
 cd /cygdrive/d/projects/github/
+
+
+# NEW SETUP
+
+alias idea="/opt/intellij-idea/bin/idea.sh"
+
+# Alias terminal utils
+alias cls="clear"
+alias refresh=". ~/.zshrc"
+alias ll='ls -hnap --group-directories-first --color=auto'
+
+# Alias navigation
+alias github="cd ~/development/projects/github"
+alias mobi="cd ~/development/projects/mobi"
+alias omniboard="cd ~/development/projects/omniboard"
+
+# Alias GIT
+alias gs='git status'
+alias gitmobi="git config --add user.name 'Herich Tomas (U803909)' && git config --add user.email tomas.herich@mobi.ch"
+alias gitoss="git config --add user.name tomastrajan && git config --add user.email tomas.trajan@gmail.com"
+
+# nvm
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# Intellij IDEA
+export WSL_ip_line=$(ipconfig.exe | grep "WSL" -n | awk -F ":" '{print $1+4}')
+export DISPLAY=$(ipconfig.exe | awk -v a=$WSL_ip_line '{if (NR==a) print $NF":0.0"}' | tr -d "\r")
+export LIBGL_ALWAYS_INDIRECT=1
+export GDK_SCALE=1
+export GDK_DPI_SCALE=2.75
+
+# Run
+cd  ~
