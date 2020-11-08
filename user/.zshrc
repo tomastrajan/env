@@ -98,6 +98,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+
 alias idea="/opt/intellij-idea/bin/idea.sh"
 
 # Alias terminal utils
@@ -106,9 +107,9 @@ alias refresh=". ~/.zshrc"
 alias ll='ls -hnap --group-directories-first --color=auto'
 
 # Alias navigation
-alias github="cd ~/development/projects/github"
-alias mobi="cd ~/development/projects/mobi"
-alias ob="cd ~/development/projects/omniboard"
+alias github="cd ~/projects/github"
+alias mobi="cd ~/projects/mobi"
+alias ob="cd ~/projects/omniboard/omniboard"
 
 # Alias GIT
 alias gs='git status'
@@ -127,11 +128,15 @@ export DISPLAY=$(ipconfig.exe | awk -v a=$WSL_ip_line '{if (NR==a) print $NF":0.
 export LIBGL_ALWAYS_INDIRECT=1
 export XCURSOR_SIZE=128
 export GDK_SCALE=1
-export GDK_DPI_SCALE=2.5
-sudo /etc/init.d/dbus start &> /dev/null
+export GDK_DPI_SCALE=2
+# sudo /etc/init.d/dbus start &> /dev/null
 
 # Fix time
 # sudo ntpdate pool.ntp.org
+
+# Connecting to services running on Win 10
+export WSL_HOST_IP=$(awk '/nameserver/ { print $2 }' /etc/resolv.conf)
+export OB_DB_HOST=$WSL_HOST_IP
 
 # Run
 cd  ~
