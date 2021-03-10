@@ -99,7 +99,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
-alias idea="/opt/intellij-idea/bin/idea.sh"
+alias idea="cls && /opt/intellij-idea/bin/idea.sh"
 
 # Alias terminal utils
 alias cls="clear"
@@ -109,7 +109,14 @@ alias ll='ls -hnap --group-directories-first --color=auto'
 # Alias navigation
 alias github="cd ~/projects/github"
 alias mobi="cd ~/projects/mobi"
+alias uxf="cd ~/projects/mobi/rwc-uxframework-ng-jslib"
+alias b2c="cd ~/projects/mobi/rwc-b2c-components-ng-jslib"
 alias ob="cd ~/projects/omniboard/omniboard"
+alias obmobi="mobi && cd rwc-codequeries && npm start"
+alias obapp="cd ~/projects/omniboard/omniboard/app && npm start"
+alias obapi="cd ~/projects/omniboard/omniboard/omniboard-api && npm run start:dev"
+alias obwww="cd ~/projects/omniboard/omniboard/public && npm start"
+alias obcli="cd ~/projects/github/analyzer && npm run watch"
 
 # Alias GIT
 alias gs='git status'
@@ -136,7 +143,7 @@ export GDK_DPI_SCALE=2
 
 # Connecting to services running on Win 10
 export WSL_HOST_IP=$(awk '/nameserver/ { print $2 }' /etc/resolv.conf)
-export OB_DB_HOST=$WSL_HOST_IP
+#export OB_DB_HOST=$WSL_HOST_IP
 
 # Run
 cd  ~
