@@ -100,23 +100,35 @@ source $ZSH/oh-my-zsh.sh
 
 
 alias idea="cls && /opt/intellij-idea/bin/idea.sh"
+alias ideaupdate="cls && sudo -E /opt/intellij-idea/bin/idea.sh" #sudo for update
+alias webstorm="cls && /opt/webstorm/bin/webstorm.sh"
 
 # Alias terminal utils
 alias cls="clear"
 alias refresh=". ~/.zshrc"
 alias ll='ls -hnap --group-directories-first --color=auto'
 
-# Alias navigation
+# Alias navigation & tasks
 alias github="cd ~/projects/github"
+alias rxjs="cd ~/projects/github/rxjs-workshop-presentation && npm run dev"
+alias solveo="cd ~/projects/github/solveo"
+alias ax="cd ~/projects/github/solveo/angular-experts-website && npm start"
+alias axn="cd ~/projects/github/solveo/tmp/angular-experts-website && npm start"
 alias mobi="cd ~/projects/mobi"
+alias mobinx="cd ~/projects/mobi/rwc-b2e-workspace"
 alias uxf="cd ~/projects/mobi/rwc-uxframework-ng-jslib"
 alias b2c="cd ~/projects/mobi/rwc-b2c-components-ng-jslib"
+alias mp="cd ~/projects/angular-experts/mobi/marketingportal-self-service"
 alias ob="cd ~/projects/omniboard/omniboard"
-alias obmobi="mobi && cd rwc-codequeries && npm start"
-alias obapp="cd ~/projects/omniboard/omniboard/app && npm start"
-alias obapi="cd ~/projects/omniboard/omniboard/omniboard-api && npm run start:dev"
-alias obwww="cd ~/projects/omniboard/omniboard/public && npm start"
-alias obcli="cd ~/projects/github/analyzer && npm run watch"
+alias obmobi="cls && mobi && cd rwc-codequeries && npm start"
+alias obapp="cls && cd ~/projects/omniboard/omniboard/ && npm run start:app"
+alias obapi="cls && cd ~/projects/omniboard/omniboard/ && npm run start:api"
+alias obwww="cls && cd ~/projects/omniboard/omniboard/apps/public && npm start"
+alias obcli="cls && cd ~/projects/github/analyzer && npm run watch"
+alias obrelease="cls && cd ~/projects/omniboard/omniboard/app && npm run release"
+# replace Bearer Token with current one from Dev tools (network / intercept request)
+alias obclean=' curl -X DELETE -H "Authorization: Bearer  XXX" https://api.omniboard.dev/organization/cleanup'
+
 
 # Alias GIT
 alias gs='git status'
@@ -124,6 +136,8 @@ alias gitmobi="git config --add user.name 'Herich Tomas (U803909)' && git config
 alias gitmobiamend="gitmobi && git commit --amend --reset-author"
 alias gitoss="git config --add user.name tomastrajan && git config --add user.email tomas.trajan@gmail.com"
 alias glog='git log --graph --abbrev-commit --decorate --format=format:"%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)" --all'
+alias gdeletelocal='git branch --merged | grep -v \* | xargs git branch -D '
+alias gitonlymain='git branch | grep -v "main" | xargs git branch -D'
 
 # nvm
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
