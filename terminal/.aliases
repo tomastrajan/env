@@ -1,0 +1,57 @@
+# Alias terminal utils
+alias ..="cd .."
+alias ...="cd .. && cd .."
+alias cls="clear"
+alias ll='ls -hnap --group-directories-first --color=auto'
+alias refresh='fish'
+
+# Folders & projects
+alias github="cd ~/projects/github"
+alias rxjs="cd ~/projects/github/rxjs-workshop-presentation && npm run dev"
+alias solveo="cd ~/projects/github/solveo"
+alias ax="cd ~/projects/angular-experts"
+alias axw="cd ~/projects/angular-experts/angular-experts-website"
+alias axws="cd ~/projects/angular-experts/angular-experts-website && npm start"
+alias ebook="cd ~/projects/angular-experts/ebook-angular-enterprise-architecture"
+alias mobi="cd ~/projects/mobi"
+alias mobinx="cd ~/projects/mobi/rwc-b2e-workspace"
+alias uxf="cd ~/projects/mobi/rwc-uxframework-ng-jslib"
+alias b2c="cd ~/projects/mobi/rwc-b2c-components-ng-jslib"
+alias ui="cd ~/projects/mobi/rwc-ui-components-ng-jslib"
+alias cli="cd ~/projects/mobi/rwc-cli-jslib"
+alias mp="cd ~/projects/angular-experts/mobi/marketingportal-self-service"
+
+# Omniboard
+alias ob="cd ~/projects/omniboard/omniboard"
+alias obmobi="cls && mobi && cd rwc-codequeries && npm start"
+alias obapp="cls && cd ~/projects/omniboard/omniboard/ && npm run start:app"
+alias obapi="cls && cd ~/projects/omniboard/omniboard/ && npm run start:api"
+alias obapianon="cls && cd ~/projects/omniboard/omniboard/ && npm run start:api:anonymous"
+alias obwww="cls && cd ~/projects/omniboard/omniboard/apps/public && npm start"
+alias obcli="cls && cd ~/projects/github/analyzer && npm run watch"
+alias obrelease="cls && cd ~/projects/omniboard/omniboard/app && npm run release"
+# replace Bearer Token with current one from Dev tools (network / intercept request)
+alias obclean=' curl -X DELETE -H "Authorization: Bearer  xxx" https://api.omniboard.dev/organization/cleanup'
+alias obcleanlocal='curl -H "X-Appengine-Cron: true" http://localhost:8080/organization/cron-cleanup-deactivated'
+alias obmobi='npx omniboard --ak xxx
+
+# Frontend
+alias fmt='npm run format:write'
+alias fmtx='npx nx format:write'
+alias npmclean='rm -rf node_modules && rm -f package-lock.json'
+
+# Alias GIT
+alias gs='git status'
+alias glog='git log --graph --abbrev-commit --decorate --format=format:"%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)" --all'
+alias gitmain='git branch -m master main'
+alias gitonlymain='git branch | grep -v "main" | xargs git branch -D'
+alias gitremovelocal='git branch --merged | grep -v \* | xargs git branch -D '
+alias gitmobi="git config --add user.name 'Herich Tomas (U803909)' && git config --add user.email tomas.herich@mobi.ch"
+alias gitmobiamend="gitmobi && git commit --amend --reset-author --no-edit"
+alias gitoss="git config --add user.name tomastrajan && git config --add user.email tomas.trajan@gmail.com"
+
+# Intellij
+alias idea="cls && /opt/intellij-idea/bin/idea.sh"
+alias ideaupdate="cls && sudo -E /opt/intellij-idea/bin/idea.sh" #sudo for update
+alias webstorm="cls && /opt/webstorm/bin/webstorm.sh"
+alias webstormupdate="cls && sudo -E /opt/webstorm/bin/webstorm.sh" #sudo for update
