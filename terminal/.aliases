@@ -1,64 +1,51 @@
+# Alias IDEs
+alias unpack="sudo tar -xvzf"
+alias idea="/opt/intellij-idea/bin/idea.sh"
+alias ideau="cls && sudo -E /opt/intellij-idea/bin/idea.sh" #sudo for update
+alias webstorm="/opt/webstorm/bin/webstorm.sh"
+alias webstormu="cls && sudo -E /opt/webstorm/bin/webstorm.sh" #sudo for update
+alias webstormeap="/opt/webstorm-eap/bin/webstorm.sh"
+alias webstormeapu="cls && sudo -E /opt/webstorm-eap/bin/webstorm.sh" #sudo for update
+
 # Alias terminal utils
-alias ..="cd .."
-alias ...="cd .. && cd .."
 alias cls="clear"
+alias refresh="fish"
 alias ll='ls -hnap --group-directories-first --color=auto'
-alias refresh='fish'
 
-# Folders & projects
-alias github="cd ~/projects/github && cls"
-alias rxjs="cd ~/projects/github/rxjs-workshop-presentation && npm run dev"
-alias solveo="cd ~/projects/github/solveo"
-alias ax="cd ~/projects/angular-experts && cls"
-alias axw="cd ~/projects/angular-experts/angular-experts-website && cls"
-alias axws="cd ~/projects/angular-experts/angular-experts-website && npm start"
-alias ebook="cd ~/projects/angular-experts/ebook-angular-enterprise-architecture"
-alias mobi="cd ~/projects/mobi && cls"
-alias mobinx="cd ~/projects/mobi/rwc-b2e-workspace"
-alias uxf="cd ~/projects/mobi/rwc-uxframework-ng-jslib && cls"
-alias b2c="cd ~/projects/mobi/rwc-b2c-components-ng-jslib && cls"
-alias ui="cd ~/projects/mobi/rwc-ui-components-ng-jslib && cls"
-alias cli="cd ~/projects/mobi/rwc-cli-jslib && cls"
+# Alias navigation
+alias meetup="cd ~/development/projects/meetup"
+alias github="cd ~/development/projects/github"
+alias ax="cd ~/development/projects/angular-experts-io"
+alias cust="cd ~/development/projects/customers"
+alias ebook="cd ~/development/projects/angular-experts-io/ebook-angular-enterprise-architecture"
+alias arch="cd ~/development/projects/angular-experts-io/angular-enterprise-architecture-example"
+alias axw="cd ~/development/projects/angular-experts-io/angular-experts-website"
+alias axws="cd ~/development/projects/angular-experts-io/angular-experts-website && npm start"
+alias modern="cd ~/development/projects/angular-experts-io/modern-angular-workshop && cls"
+alias rxjs="cd ~/development/projects/github/rxjs-workshop-presentation && npm run dev"
+alias mobi="cd ~/development/projects/mobi"
+alias uxf="cd ~/development/projects/mobi/rwc-uxframework-ng-jslib"
+alias b2c="cd ~/development/projects/mobi/rwc-b2c-components-ng-jslib"
+alias cli="cd ~/development/projects/mobi/rwc-cli-jslib"
+alias ui="cd ~/development/projects/mobi/rwc-ui-components-ng-jslib"
+alias ob="cd ~/development/projects/omniboard"
+alias obmobi="mobi && cd rwc-codequeries && npm start"
+alias obapp="cd ~/development/projects/omniboard && npm run start:app"
+alias obapi="cd ~/development/projects/omniboard && npm run start:api"
+alias obwww="cd ~/development/projects/omniboard/apps/public && npm start"
+alias obcli="cd ~/development/projects/github/analyzer && npm run watch"
+alias obmobi="npx omniboard --ak <key>"
 
-# Omniboard
-alias ob="cd ~/projects/omniboard/omniboard && cls"
-alias obmobi="cls && mobi && cd rwc-codequeries && npm start"
-alias obapp="cls && cd ~/projects/omniboard/omniboard/ && npm run start:app"
-alias obapi="cls && cd ~/projects/omniboard/omniboard/ && npm run start:api"
-alias obapianon="cls && cd ~/projects/omniboard/omniboard/ && npm run start:api:anonymous"
-alias obwww="cls && cd ~/projects/omniboard/omniboard/apps/public && npm start"
-alias obcli="cls && cd ~/projects/github/analyzer && npm run watch"
-alias obrelease="cls && cd ~/projects/omniboard/omniboard/app && npm run release"
-# replace Bearer Token with current one from Dev tools (network / intercept request)
-alias obclean=' curl -X DELETE -H "Authorization: Bearer  XXX" https://api.omniboard.dev/organization/cleanup'
-alias obcleanlocal='curl -H "X-Appengine-Cron: true" http://localhost:8080/organization/cron-cleanup-deactivated'
-alias obmobi='npx omniboard --ak XXX'
-
-# Frontend
-alias fmt='npm run format:write'
-alias fmtx='npx nx format:write'
-alias npmclean='rm -rf node_modules && rm -f package-lock.json'
-alias main='git checkout main --force && git pull && npm ci --force'
-alias master='git checkout master --force && git pull && npm ci --force'
-
+# Alias frontend utils
+alias fmt="npm run format:write"
+alias fmtx="nx format:write"
+alias main="git checkout main --force && git pull && npm ci --force"
+alias master="git checkout master --force && git pull && npm ci --force"
 
 # Alias GIT
 alias gs='git status'
-alias glog='git log --graph --abbrev-commit --decorate --format=format:"%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)" --all'
-alias gitmain='git branch -m master main'
-alias gitonlymain='git branch | grep -v "main" | xargs git branch -D'
-alias gitremovelocal='git branch --merged | grep -v \* | xargs git branch -D '
-alias gitmobi="git config --add user.name 'XXX' && git config --add user.email XXX"
-alias gitmobiamend="gitmobi && git commit --amend --reset-author --no-edit"
+alias gitmobi="git config --add user.name 'Herich Tomas (U803909)' && git config --add user.email tomas.herich@mobi.ch"
+alias gitmobiamend="gitmobi && git commit --amend --reset-author"
 alias gitoss="git config --add user.name tomastrajan && git config --add user.email tomas.trajan@gmail.com"
+alias glog='git log --graph --abbrev-commit --decorate --format=format:"%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)" --all'
 
-
-
-# Intellij
-alias idea="cls && /opt/intellij-idea/bin/idea.sh"
-alias ideaupdate="cls && sudo -E /opt/intellij-idea/bin/idea.sh" #sudo for update
-alias webstorm="cls && /opt/webstorm/bin/webstorm.sh"
-alias webstormu="cls && sudo -E /opt/webstorm/bin/webstorm.sh" #sudo for update
-alias webstormeap="cls && /opt/webstorm-eap/bin/webstorm.sh"
-alias webstormeapu="cls && sudo -E /opt/webstorm-eap/bin/webstorm.sh" #sudo for update
-alias webstromfix='sudo find .idea/ -exec sudo chown -R $USER: {} + &&  sudo find .idea/ -exec sudo chmod -R u+x {} \;'
